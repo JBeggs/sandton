@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static catalog_tags %}
+
+{% block content %}
+    <div class="col-md-12">
+        <h1>Our Services</h1>
+        <div class="media">
+            <div class="media-left">
+                <a><img src="{% static "img/service-001.jpg" %}" width="120"></a>
+            </div>
+            <div class="media-body">
+                <h4>Embroidery </h4>
+                <p>If embroidery is required, please send us your logo and we can cost individually to your requirements, embroidered logos are long lasting and
+                    extremely neat but can be slightly more expensive than screenprinting. Logos can be placed anywhere on the garments and there are no colour
+                    minimums necessary. All logos will be digitized and sampled and sent to our customers for approval before applying them onto the garments.</p>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-left">
+                <a><img src="{% static "img/service-002.jpg" %}" width="120"></a>
+            </div>
+            <div class="media-body">
+                <h4>Manufacturing </h4>
+                <p>Santon Workwear manufactures all overalls and workwear in our Hammarsdale factory in KZN. We do not import any made up overall. That
+                    being so, as a customer you are dealing with a factory and as a factory we require minimums in order to manufacture non stock items.
+                    Minimums of 100 units per colour per style are required to run special order through the factory. All stock items can be placed as and
+                    when you require and we will not force you to buy boxed lots.</p>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-left">
+                <a><img src="{% static "img/service-003.jpg" %}" width="120"></a>
+            </div>
+            <div class="media-body">
+                <h4>Screenprinting </h4>
+                <p>We operate our own in-house screenprinting room and can print up to 6 colour logos. All logos are digitized and approved with our clients
+                    before applying them onto the garments.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}

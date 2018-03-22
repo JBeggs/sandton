@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load santon_tags %}
+
+{% block content %}
+    <div class="row row-content">
+        <div class="col-md-12">
+            <h1>Product Catalog</h1>
+        </div>
+    </div>
+    <div class="row row-content">
+        {% for object in object_list %}
+            <div class="col-md-3">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="{% url "catalog:detail" object.slug %}"><img src="{% resize_image object.thumbnail 150 150 %}" width="100" height="100"></a>
+                    </div>
+                    <div class="media-body">
+                        <h4>{{ object.name|title }}</h4>
+                        <p>
+                            <a href="{% url "catalog:detail" object.slug %}" class="btn btn-default btn-small" type="button">Learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:4 or forloop.last %}
+                </div>
+                <div class="row row-content">
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock content %}

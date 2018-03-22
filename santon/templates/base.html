@@ -1,0 +1,133 @@
+{% load static catalog_tags %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block seo_description %}Santon Workwear{% endblock seo_description %}">
+    <title>{% block seo_title %}Santon Workwear{% endblock seo_title %}</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+    {% block css %}{% endblock css %}
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand navbar-link" href="{% url "index" %}"><img class="img-responsive" src="{% static "img/logo.png" %}"></a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation"><a class="text-uppercase" href="{% url "index" %}"><i class="glyphicon glyphicon-home"></i> HOME </a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><i class="glyphicon glyphicon-shopping-cart"></i> PRODUCTS <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                {% get_catalog_category_list as category_list %}
+                                {% for category in category_list %}
+                                    <li role="presentation"><a href="{% url "catalog:category_list" category.slug %}">{{ category.name }} </a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li role="presentation"><a class="text-uppercase" href="{% url "services" %}"><i class="glyphicon glyphicon-briefcase"></i> SERVICES </a></li>
+                        <li role="presentation"><a class="text-uppercase" href="{% url "contact" %}"><i class="glyphicon glyphicon-phone"></i> CONTACT </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {% block carousel %}
+        <div class="simple-slider">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url({% static "img/slider-001.jpg" %});background-position:center;">
+                        <img src="{% static "img/sabs.png" %}" width="120" class="img-sabs">
+                        <div class="div-byline">
+                            <h3 class="text-center heading-byline text-white">All our products are</h3>
+                            <h1 class="text-uppercase text-center text-white text-bold heading-byline">Manufactured </h1>
+                            <h3 class="text-center heading-byline text-white">On site</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" style="background-image:url({% static "img/slider-002.jpg" %});">
+                        <img src="{% static "img/sabs.png" %}" width="120" class="img-sabs">
+                        <div class="div-byline">
+                            <h3 class="text-center heading-byline text-white">We pride ourselves on</h3>
+                            <h1 class="text-uppercase text-center text-white text-bold heading-byline">Service </h1>
+                            <h3 class="text-center heading-byline text-white">You can count on</h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" style="background-image:url({% static "img/slider-003.jpg" %});">
+                        <img src="{% static "img/sabs.png" %}" width="120" class="img-sabs">
+                        <div class="div-byline">
+                            <h3 class="text-center heading-byline text-white">We offer</h3>
+                            <h1 class="text-uppercase text-center text-white text-bold heading-byline">Quality </h1>
+                            <h3 class="text-center heading-byline text-white">At competitive prices</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"><i class="glyphicon glyphicon-menu-left glyphicon-swiper"></i></div>
+                <div class="swiper-button-next"><i class="glyphicon glyphicon-menu-right glyphicon-swiper"></i></div>
+            </div>
+        </div>
+    {% endblock carousel %}
+    <div class="container">
+        <div class="row row-content">
+            {% block content %}{% endblock content %}
+        </div>
+    </div>
+    <div class="footer-clean">
+        <div class="div-divider">&nbsp;</div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 item">
+                        <h3>Products </h3>
+                        <ul>
+                            {% get_catalog_category_list featured=1 as category_list %}
+                            {% for category in category_list %}
+                                <li><a href="{% url "catalog:category_list" category.slug %}">{{ category.name }} </a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-4 item">
+                        <h3>General </h3>
+                        <ul>
+                            <li><a href="{% url "index" %}">Home Page </a></li>
+                            <li><a href="{% url "services" %}">Services </a></li>
+                            <li><a href="{% url "contact" %}">Contact Us </a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-4 item">
+                        <h3>Downloads </h3>
+                        <ul>
+                            <li><a href="{% static "pdf/endurance_catalogue_201709004.pdf" %}" target="blank">Endurance Catalogue</a></li>
+                            <li><a href="{% static "pdf/santon_catalogue_201709004.pdf" %}" target="blank">Santon Catalogue</a></li>
+                            <li><a href="{% static "pdf/titan_catalogue_201709004.pdf" %}" target="blank">Titan Catalogue</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 item social">
+                        <a href="https://facebook.com/SantonWorkwear/" target="blank"><i class="icon ion-social-facebook"></i></a>
+                        <a href=""><i class="icon ion-social-twitter"></i></a>
+                        <p class="copyright">Santon Workwear &copy;{% now "Y" %}</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="{% static "js/main.js" %}"></script>
+    <script src="{% static "js/simple-slider.js" %}"></script>
+    {% block js %}{% endblock js %}
+</body>
+
+</html>

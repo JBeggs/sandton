@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% load static catalog_tags santon_tags %}
+
+{% block content %}
+    <div class="col-md-8">
+        <h1>Welcome to Santon Workwear</h1>
+        <p>Santon Workwear is a South African based leading manufacturer of workwear and overalls. With over 20 years’ experience in the industry we
+            constantly endeavor and pursue our original company motto of "Quality and Service"</p>
+        <p>Our team of qualified quality experts put careful consideration in the design and function of each and every style of garment Santon Workwear
+            manufactures. Our buyers also only source the best quality fabrics and trims that make up our garments to ensure lasting longevity of each and
+            every item that is made.</p>
+        <p class="hidden-xs">We pride ourselves on not only providing high quality workwear to all markets, but that we employ and train local South Africans to do so.
+            Established in 1995, we have grown into a competitive company, manufacturing over 3500 garments per day in our Hammarsdale factory, employing
+            approx. 280 people.</p>
+        <p class="hidden-xs">Our company is SABS approved under the Endurance Workwear banner and under the brand we have the ability to supply smaller subcontractors to
+            large mining companies to parastatals.</p>
+        <p class="hidden-xs">Together with manufacturing workwear, we are also distributors for many different safety footwear brands, namely Kaliber, Bova, Lemaitre, Frams
+            and Wayne. We also stock various PPE accessories such as t-shirts, golf shirts, rainwear and Hi-Viz clothing. We offer in-house screenprinting
+            and embroidery to supply a fully branded product to the customer.</p>
+        </div>
+    <div class="col-md-4">
+        {% get_catalog_category_list featured=1 as category_list %}
+        {% for category in category_list %}
+            {% get_first_product category_slug=category.slug as product %}
+            <div class="media">
+                <div class="media-left">
+                    <a href="{% url "catalog:category_list" category.slug %}"><img src="{% resize_image product.thumbnail 100 100 %}" width="100" height="100"></a>
+                </div>
+                <div class="media-body">
+                    <h4>{{ category.name }}</h4>
+                    <p>
+                        <a href="{% url "catalog:category_list" category.slug %}" class="btn btn-default btn-small" type="button">Learn more</a>
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

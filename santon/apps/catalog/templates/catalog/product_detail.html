@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% load catalog_tags santon_tags %}
+
+{% block seo_title %}{{ object.seo.first.title|default:object.name }}{% endblock seo_title %}
+{% block seo_description %}{{ object.seo.first.description|default:object.blurb|striptags|truncatewords:15 }}{% endblock seo_description %}
+
+{% block content %}
+    <div class="row row-content">
+        <div class="col-md-12">
+            <h1>{{ object.name }}</h1></div>
+    </div>
+    <div class="row row-content">
+        <div class="col-md-4">
+            {% for image in object.gallery.images.all %}
+                {% if forloop.first %}
+                    <img class="js-img-enlarge-container" src="{% resize_image image.image 300 300 %}" width="300">
+                {% endif %}
+                <a class="js-img-enlarge" href="{% resize_image image.image 300 300 %}"><img src="{% resize_image image.image 100 100 %}" width="100"></a>
+            {% endfor %}
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="paragraph-product-description">{{ object.blurb|default:"No description"|linebreaks }}</p>
+                </div>
+                <div class="col-md-12 column-spacer-30">
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p class="text-uppercase paragraph-feature-label">BRAND </p>
+                        </div>
+                        <div class="col-md-9">
+                            <p class="paragraph-feature-description">{{ object.brand_str }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p class="text-uppercase paragraph-feature-label">FABRIC </p>
+                        </div>
+                        <div class="col-md-9">
+                            <p class="paragraph-feature-description">{{ object.fabric }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p class="text-uppercase paragraph-feature-label">WEIGHT </p>
+                        </div>
+                        <div class="col-md-9">
+                            <p class="paragraph-feature-description">{{ object.weight }} {{ object.unit_of_weight }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p class="text-uppercase paragraph-feature-label">Sizes </p>
+                        </div>
+                        <div class="col-md-9">
+                            <p class="paragraph-feature-description">{{ object.size_str }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p class="text-uppercase paragraph-feature-label">Colours</p>
+                        </div>
+                        <div class="col-md-9">
+                            {% for colour in object.colours.all %}
+                                <div class="float-left div-colour-box" data-toggle="tooltip" data-placement="bottom" style="background-color:{{ colour.colour }};" title="{{ colour.name }}"></div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-content">
+        <div class="col-md-12">
+            <h3>Related Products</h3></div>
+    </div>
+    <div class="row row-content">
+        {% get_related_products object as related_products %}
+
+        {% for related_product in related_products %}
+            <div class="col-md-3">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="{% url "catalog:detail" related_product.slug %}"><img src="{% resize_image related_product.thumbnail 100 100 %}" width="100"></a>
+                    </div>
+                    <div class="media-body">
+                        <h4>{{ related_product.name }}</h4>
+                        <p>
+                            <a href="{% url "catalog:detail" related_product.slug %}" class="btn btn-default btn-small" type="button">Learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

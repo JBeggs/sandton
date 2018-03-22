@@ -1,0 +1,14 @@
+*.swp
+*.pyc
+*.egg-info
+*.swo
+*.sqlite3
+env/
+build/
+dist/
+/media/
+/static/
+/docs/_build
+coverage.xml
+pep8.txt
+.tox/

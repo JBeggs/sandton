@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% load static catalog_tags %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Get In Contact With Us</h1></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Branches </h3>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Durban </h3></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <iframe allowfullscreen="" frameborder="0" width="100%" height="100" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB3EL1MqPIqn1H_PzyoTNN8LVRkNbEV80k&amp;q=26+Anderson+Rd,+Elangeni,+Mpumalanga&amp;zoom=15"></iframe>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"><i class="glyphicon glyphicon-earphone"></i></div>
+                                <div class="col-md-10">
+                                    <p class="paragraph-feature-description">031 569 6106 </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"><i class="glyphicon glyphicon-map-marker"></i></div>
+                                <div class="col-md-10">
+                                    <p class="paragraph-feature-description">
+                                        Unit 16 Spurwing Industrial Park,
+                                        <br>26 Anderson Road
+                                        <br>Hammarsdale
+                                        <br>KZN
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Johannesburg </h3></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <iframe allowfullscreen="" frameborder="0" width="100%" height="100" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB3EL1MqPIqn1H_PzyoTNN8LVRkNbEV80k&amp;q=Santon+Workwear%2C+Strijdom+Park&amp;zoom=15"></iframe>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"><i class="glyphicon glyphicon-earphone"></i></div>
+                                <div class="col-md-10">
+                                    <p class="paragraph-feature-description">011 791 0919 </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"><i class="glyphicon glyphicon-map-marker"></i></div>
+                                <div class="col-md-10">
+                                    <p class="paragraph-feature-description">
+                                        Unit B, Hi-Tech Industrial Park,
+                                        <br>14-16 Gerhardus Street,
+                                        <br>Strijdom Park,
+                                        <br>Johannesburg
+                                        <br>Gauteng
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h3>Contact Form</h3>
+            {% if success %}
+                <p>Thank you for getting in contact with us. We will get back to as soon as possible.</p>
+            {% else %}
+                <p>Please complete the form below to get in contact with us.</p>
+                <div class="column-spacer-30"></div>
+                <form class="form-horizontal" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <label class="control-label">FULL NAME</label>
+                        </div>
+                        <div class="col-sm-8">
+                            {{ form.full_name }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <label class="control-label">CONTACT NUMBER</label>
+                        </div>
+                        <div class="col-sm-8">
+                            {{ form.contact_number }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <label class="control-label">EMAIL ADDRESS</label>
+                        </div>
+                        <div class="col-sm-8">
+                            {{ form.email_address }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <label class="control-label">CLOSEST BRANCH</label>
+                        </div>
+                        <div class="col-sm-8">
+                            {{ form.closest_branch }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <label class="control-label">MESSAGE </label>
+                        </div>
+                        <div class="col-sm-8">
+                            {{ form.message }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button class="btn btn-default float-right" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

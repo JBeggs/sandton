@@ -1,0 +1,13 @@
+{% autoescape off %}
+Hi,
+
+An enquiry was sent from the website.
+
+Name: {{ data.full_name }}
+Number: {{ data.contact_number }}
+Email: {{ data.email_address }}
+Closest branch: {{ data.closest_branch }}
+
+Message:
+{{ data.message }}
+{% endautoescape %}
