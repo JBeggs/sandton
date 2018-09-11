@@ -28,7 +28,7 @@ DEBUG = os.environ.get("DJANGO_DEBUG") is not None or False
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "localhost", "santon.qoda.co.za", "santonworkwear.co.za",
+    "127.0.0.1","localhost", "santon.qoda.co.za", "santonworkwear.co.za",
     "www.santonworkwear.co.za","160.119.249.193"
 ]
 
@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     "santon.apps.download",
     "santon.apps.gallery",
     "santon.apps.seo",
+    "newsapp",
+    'easy_thumbnails',
+    'tinymce',
 
     # 3rd party apps
     "colorfield",
@@ -136,7 +139,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
+NEWSAPP_ENABLE_ARCHIVE = True
+
+NEWSAPP_ENABLE_CATEGORIES = True
+
+NEWSAPP_NEWS_ON_PAGE = 10
+
 # Project specific setting dict
 SANTON_CONFIG = {
     "UNIT_OF_WEIGHT": ["gram", "kilogram", "ton"]
+}
+
+TINYMCE_DEFAULT_CONFIG = {
+    'relative_urls': False, # default value
+    'width': '100%',
+    'height': 300
 }

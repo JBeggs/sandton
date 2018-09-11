@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-newsapp\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-23 01:03+0200\n"
+"PO-Revision-Date: 2016-03-23 01:03+0200\n"
+"Last-Translator: alexey <alexey@trialine.lv>\n"
+"Language-Team: trialine.lv <a@trialine.lv>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Poedit 1.8.6\n"
+
+#: admin.py:49
+msgid "Title section"
+msgstr "Nosaukumu sadaļa"
+
+#: admin.py:53
+msgid "Additional"
+msgstr "Papildus"
+
+#: admin.py:57
+msgid "Brief"
+msgstr "Īss saturs"
+
+#: admin.py:61
+msgid "Content"
+msgstr "Saturs"
+
+#: admin.py:70
+msgid "Categories"
+msgstr "Kategorijas"
+
+#: admin.py:79
+msgid "Tags"
+msgstr "Birkas"
+
+#: models.py:14 models.py:34 models.py:59
+msgid "title"
+msgstr "nosaukums"
+
+#: models.py:15 models.py:35 models.py:60
+msgid "slug"
+msgstr "url"
+
+#: models.py:16 models.py:36
+msgid "position"
+msgstr "pozīcija"
+
+#: models.py:19
+msgid "new category"
+msgstr "kategorija"
+
+#: models.py:20 models.py:68
+msgid "new categories"
+msgstr "kategorijas"
+
+#: models.py:39
+msgid "tag"
+msgstr "birka"
+
+#: models.py:40 models.py:70
+msgid "tags"
+msgstr "birkas"
+
+#: models.py:61
+msgid "brief"
+msgstr "īss saturs"
+
+#: models.py:62
+msgid "content"
+msgstr "saturs"
+
+#: models.py:63 templates/newsapp/new.html.py:20
+msgid "date added"
+msgstr "pievienošanas datums"
+
+#: models.py:64
+msgid "active"
+msgstr "aktīvs"
+
+#: models.py:65 models.py:96
+msgid "read more"
+msgstr "lasīt tālāk"
+
+#: models.py:65
+msgid "read more button text"
+msgstr "\"lasīt tālāk\" pogas nosaukums"
+
+#: models.py:66
+msgid "image"
+msgstr "bilde"
+
+#: models.py:78
+msgid "new"
+msgstr "jaunums"
+
+#: models.py:79 templates/newsapp/news.html.py:7
+msgid "news"
+msgstr "jaunumi"
+
+#: templates/newsapp/_archive.html:4
+msgid "News archive"
+msgstr "Arhīvs"
+
+#: templates/newsapp/_archive.html:7
+msgid "reset"
+msgstr "nodzēst"
+
+#: templates/newsapp/news.html:8
+msgid "year"
+msgstr "gads"
+
+#: templates/newsapp/news.html:8
+msgid "page"
+msgstr "lapa"
+
+#: templates/newsapp/news.html:68
+msgid "News not found!"
+msgstr "Informācija nav atrasta!"
+
+#~ msgid "Short content"
+#~ msgstr "Īss saturs"
+
+#~ msgid "Full content"
+#~ msgstr "Pilns saturs"
+
+#~ msgid "all"
+#~ msgstr "visi"
