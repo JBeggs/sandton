@@ -14,7 +14,9 @@ urlpatterns = [
         r"^products/",
         include("santon.apps.catalog.urls", namespace="catalog")
     ),
+    url(r'^news/', include('newsapp.urls')),
     url(r"^admin/", admin.site.urls),
+    url(r'^tinymce/', include('tinymce.urls')),
 ]
 
 urlpatterns += static(

@@ -36,7 +36,9 @@ class ContactForm(forms.Form):
         }
     ))
 
-    newsletter = forms.BooleanField(initial=True, label='I want to receive more news and updates from Santon Workwear')
+    newsletter = forms.BooleanField(
+        initial=True, label='I want to receive more news and updates from Santon Workwear'
+    )
 
     def send_email(self):
         data = self.cleaned_data

@@ -1,6 +1,9 @@
-Django==1.11.2
+Django>=1.8
 django-colorfield==0.1.14
 gunicorn==19.7.1
 olefile==0.44
-Pillow==4.1.1
+django-photologue>=3.6
+Pillow==4.3
 pytz==2017.2
+django-tinymce>=2.6.0
+easy-thumbnails

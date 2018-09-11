@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: djang-newsapp\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-23 01:03+0200\n"
+"PO-Revision-Date: 2016-03-23 01:03+0200\n"
+"Last-Translator: alexey <alexey@trialine.lv>\n"
+"Language-Team: trialine.lv <a@trialine.lv>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.6\n"
+
+#: admin.py:49
+msgid "Title section"
+msgstr "Секция заголовка"
+
+#: admin.py:53
+msgid "Additional"
+msgstr "Дополнительно"
+
+#: admin.py:57
+msgid "Brief"
+msgstr "Краткое описание"
+
+#: admin.py:61
+msgid "Content"
+msgstr "Содержание"
+
+#: admin.py:70
+msgid "Categories"
+msgstr "Рубрики"
+
+#: admin.py:79
+msgid "Tags"
+msgstr "Теги"
+
+#: models.py:14 models.py:34 models.py:59
+msgid "title"
+msgstr "заголовок"
+
+#: models.py:15 models.py:35 models.py:60
+msgid "slug"
+msgstr "ссылка"
+
+#: models.py:16 models.py:36
+msgid "position"
+msgstr "позиция"
+
+#: models.py:19
+msgid "new category"
+msgstr "Рубрика"
+
+#: models.py:20 models.py:68
+msgid "new categories"
+msgstr "Рубрики"
+
+#: models.py:39
+msgid "tag"
+msgstr "тег"
+
+#: models.py:40 models.py:70
+msgid "tags"
+msgstr "теги"
+
+#: models.py:61
+msgid "brief"
+msgstr "краткое описание"
+
+#: models.py:62
+msgid "content"
+msgstr "содержание"
+
+#: models.py:63 templates/newsapp/new.html.py:20
+msgid "date added"
+msgstr "дата добавления"
+
+#: models.py:64
+msgid "active"
+msgstr "активный"
+
+#: models.py:65 models.py:96
+msgid "read more"
+msgstr "читать далее"
+
+#: models.py:65
+msgid "read more button text"
+msgstr "\"читать далее\" текст кнопки"
+
+#: models.py:66
+msgid "image"
+msgstr "изображение"
+
+#: models.py:78
+msgid "new"
+msgstr "новость"
+
+#: models.py:79 templates/newsapp/news.html.py:7
+msgid "news"
+msgstr "новости"
+
+#: templates/newsapp/_archive.html:4
+msgid "News archive"
+msgstr "Архив"
+
+#: templates/newsapp/_archive.html:7
+msgid "reset"
+msgstr "сбросить"
+
+#: templates/newsapp/news.html:8
+msgid "year"
+msgstr "год"
+
+#: templates/newsapp/news.html:8
+msgid "page"
+msgstr "страница"
+
+#: templates/newsapp/news.html:68
+msgid "News not found!"
+msgstr "Информация не найдена!"
+
+#~ msgid "Short content"
+#~ msgstr "Короткое содержание"
+
+#~ msgid "Full content"
+#~ msgstr "Полное содержание"
+
+#~ msgid "all"
+#~ msgstr "все"
